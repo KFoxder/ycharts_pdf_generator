@@ -1,8 +1,8 @@
 version: '2'
 services:
-    ycharts_wkhtmltopdf:
+    ycharts_pdf_generator:
         build: .
-        image: ycharts/ycharts_wkhtmltopdf
+        image: ycharts/ycharts_pdf_generator
         command: /usr/bin/startup
         volumes:
-            - /sites/ycharts_pdf_tester:/sites/ycharts_pdf_tester
+            - ~/ycharts_pdf_generator:/tmp/ycharts_pdf_generator
