@@ -1,0 +1,8 @@
+version: '2'
+services:
+    ycharts_wkhtmltopdf:
+        build: .
+        image: ycharts/ycharts_wkhtmltopdf
+        command: /usr/bin/startup
+        volumes:
+            - /sites/ycharts_pdf_tester:/sites/ycharts_pdf_tester
