@@ -43,6 +43,12 @@ cd ~/ycharts_pdf_generator
 docker-compose run ycharts_pdf_generator wkhtmltopdf --dpi 300 --page-size Letter "https://www.google.com/" /tmp/ycharts_pdf_generator/output_pdfs/`date +%F%T`.pdf
 ```
 
+##### 3. URL (print media type enabled)
+The below example assumes you are running a local development server on `localhost`. If you want to generate a PDF from the URL `localhost:8080/fs.html` you would run the below command. If you want the pdf generator to use CSS that is using the `@media print` you must pass the `--print-media-type` flag.
+```
+cd ~/ycharts_pdf_generator
+docker-compose run ycharts_pdf_generator wkhtmltopdf --print-media-type --dpi 300 --page-size Letter "`ipconfig getifaddr en0`:8080/fs.html" /tmp/ycharts_pdf_generator/output_pdfs/`date +%F%T`.pdf
+```
 -----------------
 
 ### Important Notes
